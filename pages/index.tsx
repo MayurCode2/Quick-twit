@@ -7,6 +7,11 @@ import { BsEnvelope } from "react-icons/bs";
 import { BsBookmark } from "react-icons/bs";
 import { BiUser } from "react-icons/bi";
 import { Inter } from "next/font/google";
+import FeedCard from "@/components/FeedCard";
+import { BiMoney } from "react-icons/bi";
+import { SlOptions } from "react-icons/sl";
+
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,8 +42,16 @@ const SidebarMenuItems: TitterSidebarButton[] = [
     icon: <BsBookmark color="white" />,
   },
   {
+    title:"Twitter blue",
+    icon:<BiMoney />
+  },
+  {
     title: "Profile",
     icon: <BiUser color="white" />,
+  },
+  {
+    title: "More",
+    icon: <SlOptions color="white" />,
   },
 ];
 
@@ -65,7 +78,14 @@ function index() {
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 mt-3 px-4 w-full rounded-full">Post</button>
           </div>
         </div>
-        <div className=" col-span-6 border-x border-gray-600  "></div>
+        <div className=" col-span-6 border-x border-gray-600  h-screen overflow-scroll overflow-x-hidden  ">
+          <FeedCard/>
+          <FeedCard/>
+          <FeedCard/>
+          <FeedCard/>
+          <FeedCard/>
+
+        </div>
         <div className=" col-span-3"></div>
       </div>
     </div>
